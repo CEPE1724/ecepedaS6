@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ecepedaS6.Views.vEstudiante"
+             Title="vEstudiante">
+    <ContentPage.Resources>
+        <!-- El fondo negro del Grid se ve entre las celdas blancas y forma los bordes -->
+        <Style x:Key="Celda" TargetType="Label">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="Padding" Value="5,0" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="CeldaCentrada" TargetType="Label" BasedOn="{StaticResource Celda}">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ListView x:Name="listaEstudiantes"
+              Margin="10"
+              RowHeight="35"
+              SeparatorVisibility="None">
+        <ListView.Header>
+            <Grid ColumnDefinitions="*,*,*,*"
+                  HeightRequest="35"
+                  BackgroundColor="Black"
+                  ColumnSpacing="1"
+                  Padding="1">
+                <Label Grid.Column="0" Text="Codigo" BackgroundColor="Yellow" Style="{StaticResource Celda}" />
+                <Label Grid.Column="1" Text="Nombre" BackgroundColor="Yellow" Style="{StaticResource Celda}" />
+                <Label Grid.Column="2" Text="Apellido" BackgroundColor="Yellow" Style="{StaticResource Celda}" />
+                <Label Grid.Column="3" Text="Edad" BackgroundColor="Yellow" Style="{StaticResource Celda}" />
+            </Grid>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid ColumnDefinitions="*,*,*,*"
+                          BackgroundColor="Black"
+                          ColumnSpacing="1"
+                          Padding="1,0,1,1">
+                        <Label Grid.Column="0" Text="{Binding codigo}" Style="{StaticResource CeldaCentrada}" />
+                        <Label Grid.Column="1" Text="{Binding nombre}" Style="{StaticResource Celda}" />
+                        <Label Grid.Column="2" Text="{Binding apellido}" Style="{StaticResource Celda}" />
+                        <Label Grid.Column="3" Text="{Binding edad}" Style="{StaticResource Celda}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
