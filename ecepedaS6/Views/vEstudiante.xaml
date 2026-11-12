@@ -16,7 +16,10 @@
         </Style>
     </ContentPage.Resources>
 
+    <Grid RowDefinitions="*,Auto">
     <ListView x:Name="listaEstudiantes"
+              ItemSelected="listaEstudiantes_ItemSelected"
+              Grid.Row="0"
               Margin="10"
               RowHeight="35"
               SeparatorVisibility="None">
@@ -48,4 +51,12 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+
+    <Button  x:Name="btnAgregarEstudiante"
+             Text="Agregar Estudiante"
+             Margin="10"
+             Grid.Row="1"
+             Clicked="btnAgregarEstudiante_Clicked" />
+    </Grid>
+
 </ContentPage>

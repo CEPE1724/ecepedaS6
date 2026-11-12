@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ecepedaS6.Views.vActualizarEliminar"
+             Title="vActualizarEliminar">
+    <VerticalStackLayout>
+        <Label 
+            Text="Actualizar - eliminar Estudiante"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+     <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Código Estudiante" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+             <Entry Grid.Row="0" Grid.Column="1" x:Name="txtCodigo" />
+            <Label Text="Nombre Estudiante" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="txtNombre" />
+            <Label Text="Apellido Estudiante" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+            <Entry Grid.Row="2" Grid.Column="1" x:Name="txtApellido" />
+            <Label Text="Edad Estudiante" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+            <Entry Grid.Row="3" Grid.Column="1" x:Name="txtEdad" Placeholder="Ingrese la edad" Keyboard="Numeric" />
+
+        </Grid>
+            <Button Text="Actualizar" Clicked="btnActualizar_Clicked" />
+            <Button Text="Eliminar" Clicked="btnEliminar_Clicked" />
+        </VerticalStackLayout>
+</ContentPage>
